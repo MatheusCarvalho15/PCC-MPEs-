@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h3> Tem certeza que deseja excluir?</h3>
+
+Despesas: {{despesa.despesa}} </br>
+Data: {{despesa.data}} </br>
+Descrição: {{despesa.descricao}}</br>
+
+<a href="/despesas/deletar/{{despesa.id}}">Sim</a>
+<a href="/despesas/">Não</a>
+
+{% endblock %}
