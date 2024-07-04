@@ -2,11 +2,12 @@ from django.contrib.auth.decorators import login_required
 from django.template import loader
 from django.http import HttpResponseRedirect
 from .models import Despesa
+from MPEs.utils import create_groups, group_required
 from django.shortcuts import render
 from .forms import DespesasForm
+from MPEs.utils import create_groups
 
 
-@login_required
 def create(request):
     if request.method == 'POST':
         form = DespesasForm(request.POST)
@@ -38,6 +39,7 @@ def editar(request, id_despesa):
 
 @login_required
 def listartudo(request):
+    create_groups()
     user = request.user.username
     despesa = Despesa.objects.all()
 
@@ -61,7 +63,7 @@ def detail(request, id_despesa):
     try:
         saida =  Despesa.objects.get(pk=id_despesa)
     except:
-        saida = "Sem nehum gasto salvo"
+        saida = "Sem nenhum gasto salvo"
 
     return render(request, "despesa/index.html", {'Gasto': saida})
 
