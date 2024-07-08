@@ -22,7 +22,7 @@ class PermissionForm(forms.ModelForm):
     CHOICES = [
         (VENDEDOR, 'Vendedor'),
         (CAIXA, 'Caixa'),
-        (FUNCIONARIO,'Funcionario')
+        (FUNCIONARIO,'Funcionario'),
         (ADMINISTRADOR,'administrador')
     ]
 

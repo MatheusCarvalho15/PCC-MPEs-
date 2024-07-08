@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-class Usuario(AbstractUser):
+class Usuario(User):
 
     data_nascimento = models.DateField(null=True, blank=True)
     cpf = models.CharField(max_length=14, unique=True, null=True, blank=True)

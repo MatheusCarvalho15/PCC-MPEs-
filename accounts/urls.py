@@ -1,6 +1,5 @@
 
-from accounts.views import register
-from accounts.views import listarUsuarios, editarUsuario, deletarUsuario
+from accounts.views import register, listarUsuarios, editarUsuario, deletarUsuario
 from django.urls import path
 urlpatterns = [
     #cadastroForaDoSistema
