@@ -12,7 +12,7 @@ def criar_produto(request):
         form = ProdutoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar')
+            return redirect('listar_produto')
     else:
         form = ProdutoForm()
 

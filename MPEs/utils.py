@@ -7,6 +7,9 @@ from django.http import HttpResponseForbidden
 
 def group_required(groups, raise_exception=False):
     def check_perms(user):
+        if user.is_superuser:  # Verifica se o usuário é um superuser
+            return True
+
         if isinstance(groups, list):
             group_names = groups
         else:
@@ -18,7 +21,6 @@ def group_required(groups, raise_exception=False):
         if raise_exception:
             raise PermissionDenied
 
-        # As the last resort, return forbidden response
         return False
 
     return user_passes_test(

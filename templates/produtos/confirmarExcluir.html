@@ -3,11 +3,11 @@
 {% block content %}
 <h3> Tem certeza que deseja excluir?</h3>
 
-Produto: {{ produto.nome }} <br>:
-UnMed: {{ produto.unidade_medida }} <br>
-CodBarra: {{ produto.codigo_barra }} <br>
-ValorVenda: {{ produto.valor_venda }} <br>
-ValorCompra: {{ produto.valor_compra }} <br>
+Produto: {{ produto.nome }} <br>
+UnMed: {{ produto.UnMed }} <br>
+CodBarra: {{ produto.CodBarra }} <br>
+ValorVenda: {{ produto.ValorVenda }} <br>
+ValorCompra: {{ produto.ValorCompra }} <br>
 
 <a href="/produtos/deletar/{{ produto.id }}">Sim</a>
 <a href="/produtos/">Não</a>
