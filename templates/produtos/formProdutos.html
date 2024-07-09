@@ -1,33 +1,15 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
 
-<form style="margin: 40px;" action="{% url 'criar' %}" method="post">
+<form style="margin: 40px;" action="{% url 'criar_produto' %}" method="post" >
     <h1 style='margin-bottom: 30px;'>Adicionar Produto</h1>
-    {% csrf_token %}
-    <div class="form-group">
-        <label for="id_nome">Nome:</label>
-        {{ form.nome }}
-    </div>
-    <div class="form-group">
-        <label for="id_UnMed">Unidade de Medida:</label>
-        {{ form.UnMed }}
-    </div>
-    <div class="form-group">
-        <label for="id_CodBarra">Código de Barras:</label>
-        {{ form.CodBarra }}
-    </div>
-    <div class="form-group">
-        <label for="id_ValorVenda">Valor de Venda:</label>
-        {{ form.ValorVenda }}
-    </div>
-    <div class="form-group">
-        <label for="id_ValorCompra">Valor de Compra:</label>
-        {{ form.ValorCompra }}
-    </div>
-    <br>
-    <input type="submit" value="Adicionar" class="btn btn-primary">
-    <a href="{% url 'listar' %}" class="btn btn-secondary">Cancelar</a>
+{% csrf_token %}
+{{form.as_p}}
+<br>
+<input type="submit" value="Enviar" class="btn btn-primary">
+<a href="{% url 'listar_produto' %}">Cancelar</a>
 </form>
 
 {% endblock %}

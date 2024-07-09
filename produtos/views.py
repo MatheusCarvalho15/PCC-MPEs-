@@ -35,9 +35,9 @@ def editar(request, id_produto):
 @login_required
 def listarProduto(request):
     user = request.user.username
-    produtos = Produto.objects.all()
+    produto = Produto.objects.all()
     
-    return render(request, "produtos/listarProduto.html", {'produtos': produtos, 'user': user})
+    return render(request, "produtos/listarProduto.html", {'produto': produto, 'user': user})
 
 @login_required
 def deletar(request, id_produto):
